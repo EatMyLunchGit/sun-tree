@@ -1,5 +1,22 @@
 # Claims and placeholders to settle before launch
 
+## Claims shown as aims (Fred, 11 Nov 2026)
+Rule: if the claim has value we make it, and the requirement goes on the to-do list. These are on the site as plain statements. Each one must be true before the site is shown to the public.
+
+| Claim on the site | What makes it true |
+|---|---|
+| Nutri-Score A (every dish card, Standard Plena) | Register with Santé publique France (free), compute every dish, reformulate to A. Shown as text only: the official logo needs the registration. |
+| Made in Luxembourg (seal ring, ticker) | Label needs 12 months of trading or an exception from the Chamber. Text only, no official logo. The official logo may not sit next to "Grande Région". |
+| Légumes bio de la Grande Région | Organic certification (Certisys or similar) and supplier invoices. "Bio" in a dish name needs 95% organic ingredients. |
+| Sans additifs / "Additifs" in the Out list | Additive-free spec for every bought-in ingredient (tofu coagulants, plant cream, stock, mustard). |
+| No rapeseed or sunflower oil | House rule since 20 Oct. Check bought-in items: harissa, tahini sauces, plant cream, fried tofu. Sesame is still used, so the site names the two oils, not "seed oils". |
+| Extra virgin olive oil | Buy extra virgin for cooking as well as finishing; keep invoices. |
+| Pluxee accepté | Contract live, online acceptance agreed in writing. Logo only with their permission. |
+| SMS or Slack message on arrival | Slack needs an app installed in each company's workspace. |
+| Dinner "seul ou en famille" | Dishes are same-day: the label and FAQ still say eat it the day it is cooked. |
+| Kitchen log times | Marked as a typical morning. Update once the real routine exists. |
+
+
 Checked against `admin/research-food-claims.md` and `strategy/brand-naming.md` (project docs). Dashed "à confirmer" chips on the site mark the open items.
 
 ## On the site, with a condition
@@ -16,14 +33,12 @@ Checked against `admin/research-food-claims.md` and `strategy/brand-naming.md` (
 
 ## Shown as placeholders
 - Launch code LAUNCH20: 20% off EUR 15.50 is EUR 12.40, below the two-meal price. A "-20%" banner may also trigger the prior-price rule. Decide or remove.
-- Pluxee: text only, no logo, until the contract and written permission exist.
-- "Out" list: refined sugar, artificial flavours, colourings. "Additives" is left off: the research says it is probably false for some dishes.
 - Customer quotes: examples, marked as such. Replace with real quotes, with consent.
 - Pick-up points: generic examples. Name real places only once agreed.
 - Contact, legal pages, kitchen address, tray material, cancellation rule.
-- Dish card and hero are illustrations standing in for photos. Side pots on the Marrakech card are not final.
+- Photo and video slots: see `media/README.md`. Dish card and hero are illustrations standing in for photos. Side pots on the Marrakech card are not final.
 
 ## Left off on purpose
-- "Bio", "sans additifs", "Made in Luxembourg" logo, Nutri-Score (not registered yet), any health or fullness wording.
+- Official Made in Luxembourg and Nutri-Score logos, any health or fullness wording.
 - "Gluten-free / soy-free / sesame-free" filters: free-from claims need verified recipes and labels first.
 - Fonts load from Google Fonts. For EU privacy, host the four font files on the site before launch.

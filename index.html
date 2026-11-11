@@ -51,9 +51,13 @@
           <li data-i18n="hero.p1"></li>
           <li data-i18n="hero.p2"></li>
           <li data-i18n="hero.p3"></li>
+          <li data-i18n="hero.p4"></li>
         </ul>
       </div>
-      <figure class="hero-art" id="heroArt"></figure>
+      <div class="hero-side">
+        <figure class="hero-art" id="heroArt"></figure>
+        <div class="reels" id="reels"></div>
+      </div>
     </div>
     <svg class="tear" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 L0 18 L90 10 L210 22 L340 8 L480 20 L610 6 L760 19 L880 9 L1010 21 L1120 11 L1200 17 L1200 40Z"/></svg>
   </section>
@@ -127,6 +131,29 @@
     </div>
   </section>
 
+  <section class="sec sec-pink" id="standard">
+    <div class="wrap std">
+      <figure class="seal" id="seal"></figure>
+      <div>
+        <h2 data-i18n="std.h"></h2>
+        <p data-i18n="std.sub"></p>
+        <ul class="std-list" id="stdList"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-ink" id="cuisine">
+    <div class="wrap kitchen">
+      <div>
+        <p class="kicker" data-i18n="kit.k"></p>
+        <h2 data-i18n="kit.h"></h2>
+        <p data-i18n="kit.p"></p>
+        <a class="btn btn-mustard" href="#semaine" data-i18n="hero.cta"></a>
+      </div>
+      <ol class="log" id="kitLog"></ol>
+    </div>
+  </section>
+
   <section class="sec sec-mustard" id="avis">
     <div class="wrap">
       <div class="sec-head">
@@ -169,6 +196,12 @@
     <div class="wrap narrow">
       <div class="sec-head"><h2>FAQ</h2></div>
       <div id="faqList"></div>
+    </div>
+  </section>
+  <section class="cta-end">
+    <div class="wrap">
+      <h2 data-i18n="end.h"></h2>
+      <a class="btn btn-ink" href="#semaine" data-i18n="end.cta"></a>
     </div>
   </section>
 </main>

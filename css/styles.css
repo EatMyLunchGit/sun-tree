@@ -278,3 +278,63 @@ legend { font-weight: 700; font-size: .88rem; margin-bottom: 4px; padding: 0; }
   .ticker-run { animation: none; flex-wrap: wrap; width: auto; row-gap: 8px; }
   .btn, .rep-card { transition: none; }
 }
+
+/* ---- 11 Nov additions ---- */
+.hero-side { display: grid; gap: 22px; }
+.reels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.reel { position: relative; aspect-ratio: 4 / 5; border: 3px solid var(--ink); overflow: hidden; display: grid; align-content: end; justify-items: start; padding: 8px; gap: 4px; }
+.reel svg { position: absolute; inset: 12% 18% 34%; width: 64%; height: auto; margin: auto; }
+.reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.reel b { position: relative; font: 400 1rem/1.05 var(--display); text-transform: uppercase; background: var(--ink); color: var(--paper); padding: 2px 6px; }
+.reel .ph { position: relative; background: var(--paper); font-size: .58rem; }
+.reel-ph.r0 { background: var(--tomato); } .reel-ph.r1 { background: var(--teal); } .reel-ph.r2 { background: var(--blue); }
+.steam path { animation: steam 3.4s ease-in-out infinite; }
+.steam path:nth-child(2) { animation-delay: .7s; } .steam path:nth-child(3) { animation-delay: 1.4s; }
+@keyframes steam { 0%, 100% { transform: translateY(0); opacity: .95; } 50% { transform: translateY(-16px); opacity: .55; } }
+
+.day-art { position: relative; cursor: pointer; }
+.see { position: absolute; left: 0; right: 0; top: 0; background: var(--ink); color: var(--paper); font: 700 .62rem/1.9 var(--body); letter-spacing: .05em; text-transform: uppercase; text-align: center; }
+.see::before { content: 'ⓘ '; }
+.link { border: 0; background: none; padding: 0; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; color: var(--brick); min-height: 28px; }
+.rep-card u { display: block; margin-top: 4px; font-weight: 700; color: var(--brick); text-underline-offset: 3px; }
+.pill-a { background: #1E8A46; color: #fff; }
+.qty { display: inline-flex; align-items: center; border: 3px solid var(--ink); border-radius: 6px; background: var(--teal); color: var(--paper); flex: none; }
+.qty button { width: 44px; height: 42px; border: 0; background: transparent; color: inherit; font: 700 1.4rem/1 var(--body); }
+.qty button:hover { background: rgba(0, 0, 0, .18); }
+.qty output { min-width: 30px; text-align: center; font: 400 1.3rem/1 var(--display); }
+.lines li { grid-template-columns: 1fr auto 74px; }
+.lines li > span { text-align: right; }
+
+.dish-media { display: grid; grid-template-columns: 1fr 96px; gap: 10px; align-items: end; }
+.photo-ph { position: relative; aspect-ratio: 4 / 3; border: 3px dashed var(--ink); background: var(--paper-2); display: grid; place-items: center; text-align: center; padding: 10px; font-weight: 700; font-size: .85rem; overflow: hidden; }
+.photo-ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.dish-sheet-art { max-width: none; }
+.boxes li span { order: -1; }
+
+.sec-pink { background: var(--pink); }
+.std { display: grid; gap: 22px; align-items: center; }
+.seal { margin: 0; width: min(230px, 62vw); transform: rotate(-8deg); }
+.std-list { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; }
+.std-list li { background: var(--paper); border: 3px solid var(--ink); padding: 10px 14px; font-weight: 700; box-shadow: 4px 4px 0 var(--ink); }
+.sec-ink { background: var(--ink); color: var(--paper); }
+.kitchen { display: grid; gap: 26px; }
+.kitchen h2 { margin-bottom: 12px; }
+.log { list-style: none; margin: 0; padding: 18px; border: 3px solid var(--mustard); display: grid; gap: 10px; font-size: .95rem; }
+.log li { display: grid; grid-template-columns: 58px 1fr; gap: 10px; align-items: baseline; }
+.log time { font: 400 1.15rem/1 var(--display); color: var(--mustard); }
+.cta-end { background: var(--tomato); color: var(--paper); padding-block: 48px; text-align: center; }
+.cta-end h2 { margin-bottom: 20px; }
+.cta-end .btn-ink { box-shadow: 4px 4px 0 var(--mustard); }
+
+@media (min-width: 620px) {
+  .std { grid-template-columns: 240px 1fr; gap: 40px; }
+  .dish-sheet { grid-template-columns: 250px 1fr; }
+  .dish-media { grid-template-columns: 1fr; }
+  .dish-sheet-art { max-width: 120px; }
+}
+@media (min-width: 920px) {
+  .kitchen { grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .std-list { grid-template-columns: 1fr 1fr; }
+  .day-buy .qty { justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) { .steam path { animation: none; } }

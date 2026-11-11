@@ -155,7 +155,7 @@ ${P('0,392 800,366 800,640 0,640', C.paper)}${P('0,368 800,342 800,372 0,398', C
 ${D('M40 640 Q40 452 130 448 Q220 452 220 640Z', C.blue)}${D('M290 640 Q290 440 400 436 Q510 440 510 640Z', C.blue)}${D('M580 640 Q580 432 670 428 Q760 432 760 640Z', C.blue)}
 ${P('0,640 0,560 200,528 420,566 640,530 800,552 800,640', C.avocado)}
 <g stroke="${C.moss}" stroke-width="7" stroke-linecap="round"><path d="M500 590L770 560M520 618L790 586M20 590L150 566"/></g>
-<g fill="none" stroke="${C.paper}" stroke-width="15" stroke-linecap="round"><path d="M262 420 C236 386 290 366 264 326 C246 298 284 280 270 250"/><path d="M322 410 C298 372 350 346 324 302 C308 274 344 252 330 216"/><path d="M382 420 C358 386 410 366 386 326 C370 300 402 284 392 258"/></g>
+<g class="steam" fill="none" stroke="${C.paper}" stroke-width="15" stroke-linecap="round"><path d="M262 420 C236 386 290 366 264 326 C246 298 284 280 270 250"/><path d="M322 410 C298 372 350 346 324 302 C308 274 344 252 330 216"/><path d="M382 420 C358 386 410 366 386 326 C370 300 402 284 392 258"/></g>
 ${D('M176 478 Q178 614 322 618 Q466 614 468 478Z', C.ink)}
 <ellipse cx="322" cy="478" rx="150" ry="27" fill="${C.paper}"/><ellipse cx="322" cy="479" rx="132" ry="19" fill="${C.brick}"/>
 ${P('238,474 262,464 276,478 252,488', C.mustard)}${P('330,468 356,462 366,476 340,484', C.mustard)}${P('384,476 404,468 416,480 396,488', C.mustard)}
@@ -196,3 +196,17 @@ const HOW_ICONS = [
   `<svg viewBox="0 0 80 80" aria-hidden="true">${P('8,34 72,32 70,72 10,72', C.paper)}${P('6,26 74,24 74,36 6,38', C.mustard)}${O(40, 54, 13, C.tomato)}<path d="M40 46v9l6 4" fill="none" stroke="${C.paper}" stroke-width="4" stroke-linecap="round"/>${P('30,14 50,14 52,26 28,26', C.ink)}</svg>`,
   `<svg viewBox="0 0 80 80" aria-hidden="true">${D('M10 42 Q12 72 40 73 Q68 72 70 42Z', C.mustard)}<ellipse cx="40" cy="42" rx="31" ry="7" fill="${C.paper}"/><ellipse cx="40" cy="42" rx="25" ry="4" fill="${C.tomato}"/><g fill="none" stroke="${C.paper}" stroke-width="5" stroke-linecap="round"><path d="M30 30c-5-6 5-9 0-16M48 30c-5-6 5-9 0-16"/></g></svg>`,
 ];
+
+/* Standard Plena seal (creatives-v1): ring text, numbers in the centre. */
+function sealSVG(lang) {
+  const fr = lang === 'fr';
+  return `<svg viewBox="0 0 260 260" role="img" aria-label="Standard Plena">
+<circle cx="130" cy="130" r="126" fill="${C.ink}"/><circle cx="130" cy="130" r="92" fill="${C.mustard}"/>
+<defs><path id="ring" d="M130 130 m-106 0 a106 106 0 1 1 212 0 a106 106 0 1 1 -212 0"/></defs>
+<text font-family="'DM Sans', sans-serif" font-weight="700" font-size="13" fill="${C.paper}" letter-spacing="2"><textPath href="#ring" textLength="650" lengthAdjust="spacing">STANDARD PLENA ✺ MADE IN LUXEMBOURG ✺ ${fr ? 'LÉGUMES DE LA GRANDE RÉGION' : 'VEG FROM THE GRANDE RÉGION'} ✺</textPath></text>
+<text x="130" y="112" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="46" fill="${C.ink}">25 g</text>
+<text x="130" y="130" text-anchor="middle" font-family="'DM Sans', sans-serif" font-weight="700" font-size="12" letter-spacing="2" fill="${C.ink}">${fr ? 'PROTÉINES' : 'PROTEIN'}</text>
+<text x="130" y="176" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="46" fill="${C.tomato}">10 g</text>
+<text x="130" y="194" text-anchor="middle" font-family="'DM Sans', sans-serif" font-weight="700" font-size="12" letter-spacing="2" fill="${C.ink}">${fr ? 'FIBRES' : 'FIBRE'}</text>
+</svg>`;
+}

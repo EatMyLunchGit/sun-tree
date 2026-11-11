@@ -246,3 +246,55 @@ const I18N = {
     days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'], months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   },
 };
+
+/* ---- Additions, 11 Nov 2026 (Fred's feedback and the Snap Kitchen benchmark) ---- */
+Object.assign(I18N.fr, {
+  'hero.p3': '25 g de protéines par plat', 'hero.p4': '10 g de fibres par plat',
+  ticker: ['Cuisiné au Luxembourg', 'Légumes de la Grande Région', '25 g de protéines', '10 g de fibres', 'Nutri-Score A', 'Made in Luxembourg', 'Sans abonnement', 'Avant midi, ou remboursé', 'Pluxee accepté', 'Un nouveau plat chaque jour'],
+  how: [
+    ['Choisissez vos jours', 'et commandez avant 10:00. La veille, c\'est moins cher.'],
+    ['On cuisine le matin', 'dans notre cuisine au Luxembourg.'],
+    ['Avant midi, c\'est là.', 'Dans notre caisse isotherme à votre point de retrait, votre nom sur votre plat. Un SMS ou un message Slack vous prévient.'],
+    ['Réchauffez et mangez', 'à midi. Ou gardez-le au frais pour le dîner, seul ou en famille.'],
+  ],
+  'price.fine': 'Pas d\'abonnement, pas de frais de livraison. Carte bancaire ou Pluxee.',
+  ioIn: ['Légumes de saison', 'Légumineuses : lentilles, pois chiches, haricots', 'Céréales complètes', 'Épices entières, herbes fraîches', 'Huile d\'olive vierge extra'],
+  ioOut: ['Viande et poisson', 'Produits laitiers et œufs', 'Huiles de colza et de tournesol', 'Sucres raffinés', 'Arômes artificiels et colorants', 'Additifs'],
+  'std.h': 'Le Standard Plena', 'std.sub': 'Ce que chaque plat doit tenir, sans exception.',
+  std: ['25 g de protéines · 10 g de fibres', 'Nutri-Score A', 'Cuisiné au Luxembourg', 'Légumes bio de la Grande Région', 'Sans additifs'],
+  'kit.k': 'Une matinée type', 'kit.h': 'Ce matin en cuisine',
+  'kit.p': 'Tout est coupé, cuit et goûté le matin même, à la main. Voici à quoi ressemble une matinée chez nous. ' + '<span class="ph">horaires indicatifs</span>',
+  log: [['05:45', 'Les fours chauffent. On rince les lentilles.'], ['06:30', 'Les oignons dorent. Quinze minutes, pas une de moins.'], ['07:15', 'Les légumes du jour sont coupés.'], ['08:30', 'On goûte, on ajuste, on note.'], ['10:00', 'Commandes closes. Chaque plat reçoit son nom.'], ['10:45', 'Les caisses isothermes partent.'], ['11:50', 'C\'est à votre point de retrait. Le message part.']],
+  reels: ['En cuisine', 'La caisse arrive', 'À table'], 'reel.ph': 'Vidéo à venir',
+  'dlg.photo': 'Photo du plat à venir', see: 'Voir le plat', nutri: 'Nutri-Score A',
+  less: 'Un de moins', more: 'Un de plus',
+  'bar.nudge': 'Ajoutez un repas : les deux passent à {p}.',
+  'end.h': 'Nouveau chez Plena ? Commencez par cette semaine.', 'end.cta': 'Voir le menu',
+  'cart.max': 'Pour 15 repas ou plus, passez par « Plena à votre bureau ».',
+});
+Object.assign(I18N.en, {
+  'hero.p3': '25 g protein per dish', 'hero.p4': '10 g fibre per dish',
+  ticker: ['Cooked in Luxembourg', 'Veg from the Grande Région', '25 g protein', '10 g fibre', 'Nutri-Score A', 'Made in Luxembourg', 'No subscription', 'Before noon, or your money back', 'Pluxee accepted', 'A new dish every day'],
+  how: [
+    ['Pick your days', 'and order by 10:00. The day before costs less.'],
+    ['We cook in the morning', 'in our Luxembourg kitchen.'],
+    ['There before noon.', 'In our cool box at your pick-up point, with your name on your meal. We text you or message you on Slack when it lands.'],
+    ['Reheat and eat', 'at lunch. Or keep it in the fridge for dinner, on your own or with the family.'],
+  ],
+  'price.fine': 'No subscription, no delivery fee. Bank card or Pluxee.',
+  ioIn: ['Seasonal vegetables', 'Pulses: lentils, chickpeas, beans', 'Wholegrains', 'Whole spices, fresh herbs', 'Extra virgin olive oil'],
+  ioOut: ['Meat and fish', 'Dairy and eggs', 'Rapeseed and sunflower oil', 'Refined sugar', 'Artificial flavours and colourings', 'Additives'],
+  'std.h': 'The Plena Standard', 'std.sub': 'What every dish has to deliver, no exceptions.',
+  std: ['25 g protein · 10 g fibre', 'Nutri-Score A', 'Cooked in Luxembourg', 'Organic veg from the Grande Région', 'No additives'],
+  'kit.k': 'A typical morning', 'kit.h': 'This morning in the kitchen',
+  'kit.p': 'Everything is chopped, cooked and tasted that same morning, by hand. This is what a morning looks like. ' + '<span class="ph">times are a guide</span>',
+  log: [['05:45', 'Ovens on. We rinse the lentils.'], ['06:30', 'Onions go golden. Fifteen minutes, not one less.'], ['07:15', 'The day\'s vegetables are chopped.'], ['08:30', 'We taste, adjust and write it down.'], ['10:00', 'Orders close. Every dish gets its name.'], ['10:45', 'The cool boxes leave.'], ['11:50', 'It\'s at your pick-up point. The message goes out.']],
+  reels: ['In the kitchen', 'The box arrives', 'At the table'], 'reel.ph': 'Video to come',
+  'dlg.photo': 'Dish photo to come', see: 'See the dish', nutri: 'Nutri-Score A',
+  less: 'One less', more: 'One more',
+  'bar.nudge': 'Add one more meal and both drop to {p}.',
+  'end.h': 'New to Plena? Start with this week.', 'end.cta': 'See the menu',
+  'cart.max': 'For 15 meals or more, use "Plena at your office".',
+});
+I18N.fr.faq[9] = ['Puis-je payer en chèques-repas ?', 'Oui, avec Pluxee.'];
+I18N.en.faq[9] = ['Can I pay with meal vouchers?', 'Yes, with Pluxee.'];
