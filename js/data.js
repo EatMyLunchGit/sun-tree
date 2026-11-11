@@ -298,3 +298,62 @@ Object.assign(I18N.en, {
 });
 I18N.fr.faq[9] = ['Puis-je payer en chèques-repas ?', 'Oui, avec Pluxee.'];
 I18N.en.faq[9] = ['Can I pay with meal vouchers?', 'Yes, with Pluxee.'];
+
+/* ---- Additions, 11 Nov 2026 (2): ingredients, 5 a day, dietitian, chef ---- */
+/* Ingredients follow the current recipe docs, with the house swap to extra virgin olive oil. Allergens in capitals.
+   five = fruit and veg portions per meal (80 g fresh, 30 g dried, pulses count once), rounded down, capped at 5. */
+const DETAILS = {
+  marrakech: { five: 4,
+    fr: 'Lentilles vertes, tomates concassées, courge butternut, carottes, pois chiches, courgette, oignon, couscous complet (BLÉ), petits pois, pruneaux, persil, concentré de tomate, huile d\'olive vierge extra, ail, bouillon de légumes, cumin, coriandre, cannelle, gingembre, sel.',
+    en: 'Green lentils, chopped tomatoes, butternut squash, carrots, chickpeas, courgette, onion, wholewheat couscous (WHEAT), peas, prunes, parsley, tomato paste, extra virgin olive oil, garlic, vegetable stock, cumin, coriander, cinnamon, ginger, salt.' },
+  osaka: { five: 5,
+    fr: 'Carottes, oignons, petits pois, lentilles vertes, riz complet, TOFU (SOJA), pomme, pomme de terre, radis, chou rouge, concombre, vinaigre de riz, oignon nouveau, tamari (SOJA), concentré de tomate, huile d\'olive vierge extra, farine de riz, gingembre, ail, shiitaké séché, épices (curcuma, coriandre, cumin, fenugrec, cannelle, poivre, cardamome, girofle, badiane), cacao, sucre, sel.',
+    en: 'Carrots, onions, peas, green lentils, brown rice, TOFU (SOY), apple, potato, radish, red cabbage, cucumber, rice vinegar, spring onion, tamari (SOY), tomato paste, extra virgin olive oil, rice flour, ginger, garlic, dried shiitake, spices (turmeric, coriander, cumin, fenugreek, cinnamon, pepper, cardamom, clove, star anise), cocoa, sugar, salt.' },
+  abuela: { five: 4,
+    fr: 'Pommes de terre, lentilles vertes, carottes, oignons, épinards, TEMPEH (SOJA), poivron vert, oignon rouge, guindillas douces, huile d\'olive vierge extra, vinaigre de Xérès, ail, persil, tamari (SOJA), pimentón doux et fumé, laurier, origan, sucre, sel.',
+    en: 'Potatoes, green lentils, carrots, onions, spinach, TEMPEH (SOY), green pepper, red onion, mild guindilla peppers, extra virgin olive oil, sherry vinegar, garlic, parsley, tamari (SOY), sweet and smoked pimentón, bay, oregano, sugar, salt.' },
+  cairo: { five: null,
+    fr: 'Fèves, pois chiches, boulgour (BLÉ), carottes, courgette, poivron, oignon, tahini (SÉSAME), farine de pois chiche, persil, jus de citron, huile d\'olive vierge extra, ail, bouillon de légumes, cumin, coriandre, sel.',
+    en: 'Broad beans, chickpeas, bulgur (WHEAT), carrots, courgette, pepper, onion, tahini (SESAME), chickpea flour, parsley, lemon juice, extra virgin olive oil, garlic, vegetable stock, cumin, coriander, salt.' },
+  bouneschlupp: { five: 5,
+    fr: 'Haricots verts, pommes de terre, poireaux, TOFU fumé (SOJA), haricots blancs, oignons, carottes, échalotes, cornichons, crème de SOJA, pain de SEIGLE, huile d\'olive vierge extra, vinaigre de cidre et de vin blanc, ciboulette, ail, miso de riz (SOJA), sarriette, carvi, coriandre, laurier, girofle, muscade, sucre, sel.',
+    en: 'Green beans, potatoes, leeks, smoked TOFU (SOY), white beans, onions, carrots, shallots, cornichons, SOY cream, RYE bread, extra virgin olive oil, cider and white wine vinegar, chives, garlic, rice miso (SOY), savory, caraway, coriander seed, bay, clove, nutmeg, sugar, salt.' },
+  forager: { five: 3,
+    fr: 'Haricots blancs, poireaux, champignons de Paris, oignon, polenta complète, carottes, petits pois, graines de tournesol, huile d\'olive vierge extra, persil, levure nutritionnelle, ail, cèpes séchés, bouillon de légumes, thym, sel.',
+    en: 'White beans, leeks, chestnut mushrooms, onion, wholegrain polenta, carrots, peas, sunflower seeds, extra virgin olive oil, parsley, nutritional yeast, garlic, dried porcini, vegetable stock, thyme, salt.' },
+  kolkata: { five: 5,
+    fr: 'Pois chiches, TOFU (SOJA), edamame (SOJA), petits pois, oignons, poivrons verts, concombre, carottes, chou blanc, riz complet, radis daikon, vinaigre de riz, oignons nouveaux, tamari (SOJA), ketchup, farine de pois chiche, ail, gingembre, huile d\'olive vierge extra, fécule de maïs, graines et huile de SÉSAME, sucre, shiitaké séché, cinq-épices, poivre blanc, sel.',
+    en: 'Chickpeas, TOFU (SOY), edamame (SOY), peas, onions, green peppers, cucumber, carrots, white cabbage, brown rice, daikon, rice vinegar, spring onions, tamari (SOY), ketchup, chickpea flour, garlic, ginger, extra virgin olive oil, cornflour, SESAME seeds and oil, sugar, dried shiitake, five-spice, white pepper, salt.' },
+  istanbul: { five: 4,
+    fr: 'Oignons, poivrons rouges, chou rouge, yaourt de SOJA, épinards, pâtes complètes (BLÉ), lentilles brunes, TEMPEH fumé (SOJA), purée de poivron doux, vinaigre de cidre, huile d\'olive vierge extra, mélasse de grenade, ail, sauce SOJA (BLÉ), menthe, aneth, paprika doux, sumac, sucre, sel.',
+    en: 'Onions, red peppers, red cabbage, SOY yogurt, spinach, wholewheat pasta (WHEAT), brown lentils, smoked TEMPEH (SOY), sweet red pepper paste, cider vinegar, extra virgin olive oil, pomegranate molasses, garlic, SOY sauce (WHEAT), mint, dill, sweet paprika, sumac, sugar, salt.' },
+  hunter: { five: 5,
+    fr: 'Pommes de terre, chou blanc, choucroute, TOFU fumé (SOJA), oignons, haricots blancs, carottes, pomme, yaourt de SOJA, pruneaux, huile d\'olive vierge extra, raifort, concentré de tomate, aneth, vinaigre de cidre, tamari (SOJA), genièvre, piment de la Jamaïque, marjolaine, laurier, cardamome noire, poivre.',
+    en: 'Potatoes, white cabbage, sauerkraut, smoked TOFU (SOY), onions, white beans, carrots, apple, SOY yogurt, prunes, extra virgin olive oil, horseradish, tomato paste, dill, cider vinegar, tamari (SOY), juniper, allspice, marjoram, bay, black cardamom, pepper.' },
+  moselle: { five: 5,
+    fr: 'Concombre, carottes, oignons, champignons, panais, orge perlé (GLUTEN), pommes, haricots blancs, oignons rouges, seitan (gluten de BLÉ, farine de pois chiche, tamari (SOJA)), MOUTARDE à l\'ancienne, vinaigre de cidre, huile d\'olive vierge extra, aneth, miso (SOJA), sucre, carvi, genièvre, laurier, poivre, sel.',
+    en: 'Cucumber, carrots, onions, mushrooms, parsnips, pearl barley (GLUTEN), apples, white beans, red onions, seitan (WHEAT gluten, chickpea flour, tamari (SOY)), grainy MUSTARD, cider vinegar, extra virgin olive oil, dill, miso (SOY), sugar, caraway, juniper, bay, pepper, salt.' },
+};
+Object.assign(DISHES.find(d => d.id === 'moselle'), { type: 'fork', kcal: 660, p: 37, f: 21, allergens: ['gluten', 'soy', 'mustard'],
+  fr: 'Seitan glacé à la moutarde, haricots blancs, orge perlé au carvi, légumes rôtis et pomme.', en: 'Mustard-glazed seitan and white beans on caraway pearl barley, with roast roots and apple.' });
+
+Object.assign(I18N.fr, {
+  'dlg.ing': 'Ingrédients', 'dlg.ingtbc': 'Liste complète à venir avec la recette finale.',
+  'dlg.ingnote': 'D\'après la recette actuelle. Allergènes en majuscules. L\'étiquette fait foi.',
+  'dlg.five': 'Environ <b>{n} de vos 5</b> fruits et légumes par jour', 'dlg.fivenote': 'Portions de 80 g, calculées sur la recette.',
+  'kit.p': 'Tout est coupé, cuit et goûté le matin même, à la main. Les recettes ont été créées avec le chef <b>Max de Toubron</b>. Voici une matinée chez nous. <span class="ph">horaires indicatifs</span>',
+  std: ['25 g de protéines · 10 g de fibres', 'Nutri-Score A', 'Cuisiné au Luxembourg', 'Légumes bio de la Grande Région', 'Sans additifs', 'Approuvé par notre diététicien·ne', 'Recettes créées avec le chef Max de Toubron'],
+});
+Object.assign(I18N.en, {
+  'dlg.ing': 'Ingredients', 'dlg.ingtbc': 'Full list to come with the final recipe.',
+  'dlg.ingnote': 'From the current recipe. Allergens in capitals. The label is the reference.',
+  'dlg.five': 'About <b>{n} of your 5</b> fruit and veg a day', 'dlg.fivenote': '80 g portions, worked out from the recipe.',
+  'kit.p': 'Everything is chopped, cooked and tasted that same morning, by hand. The recipes were built with chef <b>Max de Toubron</b>. This is a morning in our kitchen. <span class="ph">times are a guide</span>',
+  std: ['25 g protein · 10 g fibre', 'Nutri-Score A', 'Cooked in Luxembourg', 'Organic veg from the Grande Région', 'No additives', 'Approved by our dietitian', 'Recipes built with chef Max de Toubron'],
+});
+I18N.fr.ticker.splice(6, 0, 'Approuvé par notre diététicien·ne', 'Recettes du chef Max de Toubron');
+I18N.en.ticker.splice(6, 0, 'Dietitian approved', 'Recipes by chef Max de Toubron');
+I18N.fr.faq.splice(8, 0, ['Qu\'en dit votre diététicien·ne ?', 'Chaque recette est relue et approuvée par notre diététicien·ne. « <span class="ph">citation à venir</span> » <span class="ph">nom et titre à venir</span>'],
+  ['Qui a créé les recettes ?', 'Elles ont été créées avec le chef Max de Toubron, puis testées plat par plat dans notre cuisine.']);
+I18N.en.faq.splice(8, 0, ['What does your dietitian say?', 'Every recipe is reviewed and approved by our dietitian. "<span class="ph">quote to come</span>" <span class="ph">name and title to come</span>'],
+  ['Who created the recipes?', 'They were built with chef Max de Toubron, then tested dish by dish in our kitchen.']);

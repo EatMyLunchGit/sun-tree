@@ -338,3 +338,13 @@ legend { font-weight: 700; font-size: .88rem; margin-bottom: 4px; padding: 0; }
   .day-buy .qty { justify-content: space-between; }
 }
 @media (prefers-reduced-motion: reduce) { .steam path { animation: none; } }
+
+/* ---- Dish pop-up: 5 a day and ingredients ---- */
+.five { display: flex; gap: 12px; align-items: center; background: var(--avocado); border: 3px solid var(--ink); padding: 10px 12px; line-height: 1.25; }
+.five small { display: block; font-size: .74rem; opacity: .85; }
+.five-dots { display: flex; gap: 4px; flex: none; }
+.five-dots i { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--ink); }
+.five-dots i.on { background: var(--tomato); }
+.ing-h { font: 400 1.2rem/1 var(--display); text-transform: uppercase; margin: 14px 0 4px; }
+.ing { font-size: .9rem; line-height: 1.45; }
+.nutri-img { display: inline-block; height: 34px; width: auto; vertical-align: middle; }

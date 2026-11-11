@@ -14,6 +14,7 @@
   let repFilter = 'all';
   let cart = store.get('plena.cart2', {}); /* { 'YYYY-MM-DD': quantity } */
   let reelsFound = {};
+  let nutriImg = false; /* set when media/nutriscore-a.svg exists (official file, after registration) */
 
   const t = (k, vars) => {
     let s = I18N[lang][k];
@@ -96,6 +97,9 @@
     if (r.ok && (r.headers.get('content-type') || '').startsWith('video')) { reelsFound[i] = true; renderReels(); }
   }).catch(() => { /* no video yet */ }));
 
+  const nutri = () => nutriImg ? `<img class="nutri-img" src="media/nutriscore-a.svg" alt="Nutri-Score A">` : `<span class="pill pill-a">${t('nutri')}</span>`;
+  fetch('media/nutriscore-a.svg', { method: 'HEAD' }).then(r => { if (r.ok && (r.headers.get('content-type') || '').includes('svg')) { nutriImg = true; renderWeek(); } }).catch(() => {});
+
   /* ---- Week board ---- */
   const allergenText = d => d.allergens.length ? d.allergens.map(a => ALLERGENS[a][lang]).join(', ') : t('none14');
   const nums = d => d.p ? `<b>${d.p} g</b> ${t('prot')} · <b>${d.f} g</b> ${t('fib')} · ${d.kcal} kcal` : `${t('prot')}, ${t('fib')} : <span class="ph">${t('tbc')}</span>`;
@@ -116,7 +120,7 @@
           <p class="day-date">${fmtDay(day.date)} ${badge}</p>
           <h3>The ${d.name}</h3>
           <p class="day-desc">${d[lang]} <button type="button" class="link" data-dish="${d.id}">${t('details')}</button></p>
-          <p class="day-meta"><span class="pill">${t(d.type)}</span> <span class="pill pill-a">${t('nutri')}</span> ${nums(d)}</p>
+          <p class="day-meta"><span class="pill">${t(d.type)}</span> ${nutri()} ${nums(d)}</p>
           <p class="day-all">${t('allergens')} : ${allergenText(d)}</p>
           ${can ? `<div class="day-buy">
             <p class="day-price"><b>${money(single(day))}</b><small>${t('from2', { p: money(PRICES.multi) })}</small></p>
@@ -163,7 +167,7 @@
 
   /* ---- Dish sheet ---- */
   function openDish(id) {
-    const d = dish(id);
+    const d = dish(id), x = DETAILS[id] || {};
     const box = (v, l) => `<li><span>${l}</span><b>${v}</b></li>`;
     const tbc = '<span class="ph">' + t('tbc') + '</span>';
     $('#dishDlgBody').innerHTML = `<button class="x" type="button" data-close aria-label="${t('cart.close')}">×</button>
@@ -181,8 +185,12 @@
             ${box(d.kcal ? d.kcal + ' kcal' : tbc, t('kcal.l'))}
             ${box(t(d.type), t('type.l'))}
           </ul>
-          <p><span class="pill pill-a">${t('nutri')}</span> <span class="pill">${REGIONS[d.region][lang]}</span></p>
+          <p>${nutri()} <span class="pill">${REGIONS[d.region][lang]}</span></p>
+          ${x.five ? `<p class="five"><span class="five-dots">${[1, 2, 3, 4, 5].map(i => `<i class="${i <= x.five ? 'on' : ''}"></i>`).join('')}</span><span>${t('dlg.five', { n: x.five })}<small>${t('dlg.fivenote')}</small></span></p>` : ''}
           <p><b>${t('allergens')} :</b> ${allergenText(d)}</p>
+          <h3 class="ing-h">${t('dlg.ing')}</h3>
+          <p class="ing">${x[lang] ? x[lang].replace(/(?<![A-Za-zÀ-ÿ])([A-ZÉÈ]{3,})(?![A-Za-zÀ-ÿ])/g, '<b>$1</b>') : t('dlg.ingtbc')}</p>
+          ${x[lang] ? `<p class="fine">${t('dlg.ingnote')}</p>` : ''}
           <p>${t('dlg.pots')}</p>
           <p class="fine">${t('dlg.calc')}${PH[lang]}</p>
         </div>

@@ -14,6 +14,11 @@ Rule: if the claim has value we make it, and the requirement goes on the to-do l
 | Pluxee accepté | Contract live, online acceptance agreed in writing. Logo only with their permission. |
 | SMS or Slack message on arrival | Slack needs an app installed in each company's workspace. |
 | Dinner "seul ou en famille" | Dishes are same-day: the label and FAQ still say eat it the day it is cooked. |
+| "Approuvé par notre diététicien·ne" | A named, qualified dietitian signs off every recipe in writing. Quote, name and title are placeholders in the FAQ. |
+| "Recettes créées avec le chef Max de Toubron" | His written agreement to be named. |
+| "Environ N de vos 5 fruits et légumes par jour" (dish pop-up) | Worked out from recipe weights: 80 g fresh or 30 g dried per portion, pulses count once, potatoes don't count, rounded down. Redo when a recipe changes. The Cairo has no figure yet. |
+| Ingredient lists (dish pop-up) | Taken from the recipe docs, with olive oil in place of rapeseed and no lemon in the pot. The Nonna and The Tadka have no list yet. Rewrite from the final recipes and bought-in labels, in weight order with QUID percentages. |
+| Nutri-Score logo | The site shows text until the official file exists. After registration, save the official logo as `media/nutriscore-a.svg` and it replaces the text everywhere. |
 | Kitchen log times | Marked as a typical morning. Update once the real routine exists. |
 
 
